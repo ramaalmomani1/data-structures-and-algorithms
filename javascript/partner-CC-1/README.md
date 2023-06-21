@@ -24,6 +24,10 @@ Output: Array (sum of each row in a matrix )
 * **Input:** [ [1, 2, 3], [3, 5, 7], [1, 7, null] ]
 * **Output:** [6, 15, 8]
 
+4.Empty array:
+* **Input:** [ ]
+* **Output:** [ ]
+
 ----
 
 **_Visualization_:**
@@ -52,25 +56,23 @@ Output: Array (sum of each row in a matrix )
 
 **_Big O_**
 
-Big O = O(n) for the (for loop) and wh have two nested for loops,
-Total Big O = O(n^2)
+Big O = O(n) --> because it creates a new array to store the sums of each row.
 
 ----
 
 **_Code_:**
 
 ```javascript
-
-function matrix(arr){
- let newArr = [];
-  for(let i = 0; i< arr.length; i++){
-   let sum = 0;
-  for(let j = 0; j < arr[i].lenght; j++){
-   sum = sum + arr[i][j] 
+function matrix(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let sum = 0;
+    for (let j = 0; j < arr[i].lenght; j++) {
+      sum = sum + arr[i][j]
+    }
+    newArr.push(sum)
   }
-   newArr.push(sum)
- }
-  rerurn newArr
+  return newArr
 }
 
 ```
