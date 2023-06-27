@@ -26,14 +26,14 @@ class LinkedList {
   }
 
   kthFromEnd(k) {
-    if (k < 0 || !this.head) {
+    if (k <= 0 || !this.head) {
       return null;
     }
 
     let slow = this.head;
     let fast = this.head;
 
-    for (let i = 0; i <= k; i++) {
+    for (let i = 0; i < k; i++) {
       if (!fast) {
         return null ;
       }
@@ -55,7 +55,7 @@ linkedList.append(8);
 linkedList.append(2);
 // linkedList.append(5);
 
-console.log(linkedList.kthFromEnd(0));
+console.log(linkedList.kthFromEnd(4));
 console.log(linkedList.kthFromEnd(2));
 console.log(linkedList.kthFromEnd(6));
 
