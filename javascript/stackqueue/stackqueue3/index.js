@@ -128,3 +128,4 @@ test.enqueue(new Animal('cat', 'Mittens'));
 
 console.log(test.dequeue('cat'));
 console.log(test.dequeue('dog'));
+
