@@ -68,6 +68,7 @@ function checkBrackets(str) {
   return true;
 }
 console.log(checkBrackets('{(})'));
+
 ```
 
 
