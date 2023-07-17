@@ -50,8 +50,8 @@ class BinaryTree{
 
 
 class BinarySearchTree extends BinaryTree{
-  constructor(){
-    super();
+  constructor(root){
+    super(root);
 
   }
 
@@ -63,40 +63,53 @@ class BinarySearchTree extends BinaryTree{
       this.root = newNode;
     } else{
 
-      // let current = this.root;
-      while(value !== this.root.value){
+      let currentVal = this.root;
+      while(value !== currentVal.value){
 
-        if(value < this.root.value){
-          if (this.root.left) this.root = this.root.left;
+        if(value < currentVal.value){
+          let newNode = new Node(value);
+          if (currentVal.left) currentVal = currentVal.left;
           else {
-            this.root.left = newNode;
+            currentVal.left = newNode;
             return;
           }
         }
 
-        if(value > this.root.value){
-          if (this.root.right) this.root = this.root.right;
+        if(value > currentVal.value){
+          let newNode = new Node(value);
+          if (currentVal.right) currentVal = currentVal.right;
           else {
-            this.root.right = newNode;
+            currentVal.right = newNode;
             return;
           }
         }
       }
-      return 'This is an exesting value!';
+      return 'This is an existing value!';
     }
   }
+
+  contains(value){
+
+    let currentVal = this.root;
+    if (currentVal.value === null) return false;
+    else if (currentVal.value === value) return true;
+
+    while (currentVal.value !== value) {
+
+      if (value > currentVal.value) {
+        if (currentVal.right) currentVal = currentVal.right;
+        else return false;
+      }
+
+      if (value < currentVal.value) {
+        if (currentVal.left) currentVal = currentVal.left;
+        else return false;
+      }
+    }
+
+    return true;
+  }
 }
-
-
-
-// contains(value){
-//   let newNode = new Node(value);
-//   if(this.root === null) return false;
-
-//   while(this.root !== null)
-//     if(this.root.value === newNode) return true;
-//     // else return false;
-// }
 
 
 
