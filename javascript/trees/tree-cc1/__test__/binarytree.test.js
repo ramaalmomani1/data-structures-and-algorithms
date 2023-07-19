@@ -45,6 +45,12 @@ describe('Binary Search tree testing', () => {
     expect(newTree.contains(90)).toEqual(true);
   });
 
+  it('Find the maximum value stored in the tree' ,() => {
+
+    expect(newTree.findMax()).toEqual(120);
+
+  });
+
   it('Can successfully return a collection from a post-order traversal', () => {
     expect(newTree.postOrder()).toEqual([80, 95, 90, 109, 120, 110, 100]);
   });

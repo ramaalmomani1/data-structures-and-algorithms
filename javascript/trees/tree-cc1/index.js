@@ -25,3 +25,4 @@ console.log(newTree.contains(80));
 console.log(newTree.contains(90));
 
 
+console.log(newTree.findMax());
