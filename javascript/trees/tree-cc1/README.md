@@ -21,6 +21,7 @@ This class should be a sub-class of the Binary Tree Class, with the following ad
 
 **Contains method:** Argument: value.Returns: boolean indicating whether or not the value is in the tree at least once.
 
+**Added for code challenge #16:** method for the Binary Tree class to find maximum value, taking arguments as none and returns number, which is the maximum value stored in the tree.
 
 ----
 
@@ -44,12 +45,22 @@ Taking value: Adds a new node with that value in the correct location in the bin
 
 Taking value and returns boolean indicating whether or not the value is in the tree at least once. If the value is existing inside the tree return true, else return false.
 
+**findMax**
+
+Taking arguments as none and returns number, which is the maximum value stored in the tree.
+
+
 ----
 
 
 **_Test cases & Visualization_:**
 
 ![Visualization](image-1.png)
+
+**Added for code challenge #16:**
+
+![findMax method](image-2.png)
+
 ----
 
 **_Node class code:_**
@@ -119,6 +130,22 @@ class BinaryTree{
 
     traversal(this.root);
     return arr;
+  }
+  
+//Added method for code challenge #16
+    findMax(){
+    const preOrderArray = this.preOrder();
+
+    // return Math.max(...preOrderArray); // this is the solution using a built in method
+
+    let maxValue = preOrderArray[0];
+
+    for (let i = 0; i <= preOrderArray.length; i++) {
+      if (preOrderArray[i] > maxValue) {
+        maxValue = preOrderArray[i];
+      }
+    }
+    return maxValue; // same result using for loop 
   }
 }
 
@@ -206,5 +233,7 @@ module.exports ={
 5. Can successfully return a collection from an in-order traversal
 6. Can successfully return a collection from a post-order traversal
 7. Returns true	false for the contains method, given an existing or non-existing node value
+8. **Added test case for code challenge #16:** Find the maximum value stored in the tree
+
 
 **All the tests --> passed**

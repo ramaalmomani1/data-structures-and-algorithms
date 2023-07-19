@@ -45,7 +45,23 @@ class BinaryTree{
     traversal(this.root);
     return arr;
   }
+
+  findMax(){
+    const preOrderArray = this.preOrder();
+
+    // return Math.max(...preOrderArray); // this is the solution using a built in method
+
+    let maxValue = preOrderArray[0];
+
+    for (let i = 0; i <= preOrderArray.length; i++) {
+      if (preOrderArray[i] > maxValue) {
+        maxValue = preOrderArray[i];
+      }
+    }
+    return maxValue; // same result using for loop 
+  }
 }
+
 
 
 
