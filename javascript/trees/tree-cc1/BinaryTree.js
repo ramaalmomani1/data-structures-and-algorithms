@@ -10,14 +10,22 @@ class BinaryTree{
   // Pre-order: root >> left >> right
   preOrder(){
     let arr = [];
-    const traversal = node => {
+
+    function traversal(node){
       arr.push(node.value);
       if(node.left) traversal(node.left);
       if(node.right) traversal(node.right);
-    };
-
+    }
     traversal(this.root);
     return arr;
+    // const traversal = node => {
+    //   arr.push(node.value);
+    //   if(node.left) traversal(node.left);
+    //   if(node.right) traversal(node.right);
+    // };
+
+    // traversal(this.root);
+    // return arr;
   }
 
   // Post-order: left >> right >> root
