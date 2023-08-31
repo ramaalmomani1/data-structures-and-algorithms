@@ -66,12 +66,12 @@ const HashTable = new Hashmap(19);
 
 console.log(HashTable.hash("Rama")); // Rama saved --> index 12
 
-HashTable.set("Basha", "Student");
 HashTable.set("Saleh", "Student");
 HashTable.set("Anas", "Student");
 HashTable.set("Farah", "Student");
 HashTable.set("Rama", "Student");
 HashTable.set("Waleed", "Instructor");
+HashTable.set("Basha", "Student");
 // HashTable.get("Saleh")
 const allKeys = HashTable.keys();
 console.log("hello", allKeys);
