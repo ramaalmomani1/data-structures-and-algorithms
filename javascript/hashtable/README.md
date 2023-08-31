@@ -9,6 +9,8 @@
 
 ### Whiteboard
 
+![Whiteboard](image-2.png)
+
 ----
 
 ### Code
