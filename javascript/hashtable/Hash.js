@@ -62,14 +62,14 @@ class Hashmap {
   }
 
   repeatedWord(string) {
-    let splitedString = string.split(" " || ", ");
+    let splitedString = string.split(" ");
     console.log(splitedString);
     let newHashMap = new Hashmap(this.size);
     for (let i = 0; i < splitedString.length; i++) {
       if (newHashMap.has(splitedString[i])) {
         return splitedString[i];
       }
-      newHashMap.set(splitedString[i], true);
+      newHashMap.set(splitedString[i], splitedString[i]);
     }
     return null;
   }
@@ -104,10 +104,9 @@ console.log(
 
 console.log(
   HashTable.repeatedWord(
-    "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."
+    "It was a queer, sultry summer , the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."
   )
 );
-
 // HashTable.map.forEach((data, i) => {
 //   console.log(i, data && data.values());
 // });
