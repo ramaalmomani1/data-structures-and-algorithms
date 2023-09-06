@@ -10,7 +10,7 @@ class Hashmap {
 
   hash(key) {
     return (
-      (key.split("").reduce((p, n) => {
+      (key.split('').reduce((p, n) => {
         return p + n.charCodeAt(0);
       }, 0) *
         599) %
@@ -75,7 +75,7 @@ class Hashmap {
   }
 }
 module.exports = Hashmap;
-const HashTable = new Hashmap(19);
+// const HashTable = new Hashmap(19);
 
 // console.log(HashTable.hash("Rama")); // Rama saved --> index 12
 
@@ -92,21 +92,21 @@ const HashTable = new Hashmap(19);
 // console.log(HashTable.has("Saleh"));
 // console.log(HashTable.has("soso"));
 
-console.log(
-  HashTable.repeatedWord("Once upon a time, there was a brave princess who...")
-);
+// console.log(
+//   HashTable.repeatedWord("Once upon a time, there was a brave princess who...")
+// );
 
-console.log(
-  HashTable.repeatedWord(
-    "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."
-  )
-);
+// console.log(
+//   HashTable.repeatedWord(
+//     "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only..."
+//   )
+// );
 
-console.log(
-  HashTable.repeatedWord(
-    "It was a queer, sultry summer , the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."
-  )
-);
+// console.log(
+//   HashTable.repeatedWord(
+//     "It was a queer, sultry summer , the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."
+//   )
+// );
 // HashTable.map.forEach((data, i) => {
 //   console.log(i, data && data.values());
 // });
