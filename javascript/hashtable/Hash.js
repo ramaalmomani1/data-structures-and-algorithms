@@ -110,3 +110,4 @@ module.exports = Hashmap;
 // HashTable.map.forEach((data, i) => {
 //   console.log(i, data && data.values());
 // });
+
