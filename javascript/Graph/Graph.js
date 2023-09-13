@@ -31,7 +31,6 @@ class Graph {
       return [];
     }
 
-
     const edges = this.adjacencyList.get(vertex);
 
     const neighbors = edges.map((edge) => ({
@@ -44,6 +43,34 @@ class Graph {
 
   size() {
     return this.adjacencyList.size;
+  }
+  
+  breadthFirst(startNode) {
+    if (!this.adjacencyList.has(startNode)) {
+      return [];
+    }
+
+    const visited = new Set();
+    const result = [];
+    const queue = [startNode];
+
+    visited.add(startNode);
+
+    while (queue.length > 0) {
+      const currentVertex = queue.shift();
+      result.push(currentVertex);
+
+      const neighbors = this.getNeighbors(currentVertex);
+
+      for (const neighbor of neighbors) {
+        if (!visited.has(neighbor.vertex)) {
+          visited.add(neighbor.vertex);
+          queue.push(neighbor.vertex);
+        }
+      }
+    }
+
+    return result;
   }
 }
 
@@ -70,8 +97,9 @@ graph.addEdge(two, five);
 graph.addEdge(four, three);
 graph.addEdge(five, six);
 
-
 // console.log(graph.adjacencyList.entries())
+
+
 
 for (const [k, v] of graph.adjacencyList.entries()) {
   console.log("Key =>", k, "V =>", v);
@@ -82,9 +110,10 @@ for (const [k, v] of graph.adjacencyList.entries()) {
 
 ////////////////
 
-console.log('Vertices',graph.getVertices());
+console.log("Vertices", graph.getVertices());
 
 const neighbors = graph.getNeighbors(one);
-console.log('Neighbors', neighbors);
+console.log("Neighbors", neighbors);
 
-console.log('Size ',graph.size());
+console.log("Size ", graph.size());
+console.log('Breadth-First Traversal:', graph.breadthFirst(one));
