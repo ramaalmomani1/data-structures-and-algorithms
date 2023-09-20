@@ -1,7 +1,7 @@
 "use strict";
 
 const Edge = require("./Edge");
-// const Vertex = require("./Vertex"); 
+// const Vertex = require("./Vertex");
 
 class Graph {
   constructor() {
@@ -108,6 +108,26 @@ class Graph {
     }
 
     return totalCost;
+  }
+  depthFirst(node) {
+    const visitedNode = new Set();
+    const result = [];
+
+    const travers = (current) => {
+      visitedNode.add(current);
+      result.push(current);
+
+      const neighbors = this.getNeighbors(current);
+      for (const neighbor of neighbors) {
+        if (!visitedNode.has(neighbor.vertex)) {
+          travers(neighbor.vertex);
+        }
+      }
+    };
+
+    travers(node);
+
+    return result.join(",");
   }
 }
 
